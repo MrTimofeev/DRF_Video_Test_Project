@@ -1,0 +1,45 @@
+# Environment
+.env
+.env.local
+.env.*.local
+*.env*
+.venv/
+venv/
+env/
+ENV/
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+
+# Django
+db.sqlite3
+media/
+staticfiles/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Docker
+__pycache__
+*.pyc
+*.pyo
+*.mo
+*.po
+*.pot
+*.mo
+*.pyc
+*.pyo
+*.mo
+*.po
+*.pot
+*.mo
+
+# OS
+.DS_Store
+Thumbs.db
