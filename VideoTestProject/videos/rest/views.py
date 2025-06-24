@@ -28,7 +28,7 @@ class VideoViewSet(mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.Ge
             return qs.published()
 
         if not self.request.user.is_staff:
-            return qs.pablished(user=self.request.user)
+            return qs.published(user=self.request.user)
 
         return qs
 
@@ -74,7 +74,7 @@ class VideoViewSet(mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.Ge
             likes_sum=Subquery(subquery)
         ).exclude(likes_sum=None).order_by("-likes_sum")
 
-        result = [{"usermane": u.username, "likes_sum": u.likes_sum}
+        result = [{"username": u.username, "likes_sum": u.likes_sum}
                   for u in users]
         
         return Response(result)

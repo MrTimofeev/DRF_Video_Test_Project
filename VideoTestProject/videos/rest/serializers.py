@@ -16,6 +16,8 @@ class VideoFileSerializer(serializers.ModelSerializer):
 
 
 class VideoSerializer(serializers.ModelSerializer):
+    owner = serializers.CharField(source='owner.username', read_only=True)
+
     class Meta:
         model = Video
         fields = [
