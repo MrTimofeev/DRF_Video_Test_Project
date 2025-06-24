@@ -44,7 +44,7 @@ class VideoViewSet(mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.Ge
             except Exception as e:
                 return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
-        elif request.merhod == "DELETE":
+        elif request.method == "DELETE":
             try:
                 hadler.unlike()
                 return Response(status=status.HTTP_204_NO_CONTENT)
@@ -76,9 +76,9 @@ class VideoViewSet(mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.Ge
 
         result = [{"username": u.username, "likes_sum": u.likes_sum}
                   for u in users]
-        
+
         return Response(result)
-    
+
     @action(["GET"], detail=False, url_path="statistics-group-by", permission_classes=[IsAdminUser])
     def statistics_group_by(self, request, *args, **kwargs):
         stats = (
@@ -88,5 +88,5 @@ class VideoViewSet(mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.Ge
             .annotate(likes_sum=Sum("total_likes"))
             .order_by("-likes_sum")
         )
-        
+
         return Response(stats)

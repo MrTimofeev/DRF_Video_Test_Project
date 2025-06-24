@@ -152,3 +152,17 @@ LOGGING = {
         }
     }
 }
+
+
+REST_FRAMEWORK = {
+    # Аутентификация
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    # Пагинация
+    'DEFAULT_PAGINATION_CLASS': 'videos.rest.pagination.StandartResultSetPagination',
+    'PAGE_SIZE': 10,
+    # Отладка: вывод JSON в тестах
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+}
