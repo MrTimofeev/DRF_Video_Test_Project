@@ -2,7 +2,7 @@
 FROM python:3.13-slim
 
 # Установка записимосте 
-RUN apt-get update && apt-get install -y 
+RUN apt-get update && apt-get install -y --no-install-recommends netcat-openbsd && rm -rf /var/lib/apt/lists/*
 
 #Рабочая дерикрория внутри контейнера
 WORKDIR /app
@@ -16,9 +16,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем весь код проекта
 COPY . .
 
+# Копируем и делаем исполняемым entrypoint
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 # переходим в каталог с manage.py
 WORKDIR /app/VideoTestProject
 
-# Команда для запуска окружения
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Запускаем entrypoint
+ENTRYPOINT ["/entrypoint.sh"]
 
