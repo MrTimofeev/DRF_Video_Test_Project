@@ -25,4 +25,3 @@ WORKDIR /app/VideoTestProject
 
 # Запускаем entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
-
