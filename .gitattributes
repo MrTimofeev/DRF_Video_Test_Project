@@ -1,0 +1,25 @@
+# Устанавливаем LF для всех текстовых файлов
+* text=auto eol=lf
+
+# Явно указываем, что скрипты должны быть с LF
+*.sh text eol=lf
+entrypoint.sh text eol=lf
+
+# Python
+*.py text eol=lf
+
+# Конфиги
+*.env text eol=lf
+.env.example text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+
+# Docker
+Dockerfile text eol=lf
+docker-compose.yml text eol=lf
+
+# Исключения (если нужно)
+# *.bat text eol=crlf
+# *.cmd text eol=crlf
