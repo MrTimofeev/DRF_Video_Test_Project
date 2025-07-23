@@ -27,14 +27,15 @@
 git clone https://github.com/MrTimofeev/DRF_Video_Test_Project.git
 cd DRF_Video_Test_Project\VideoTestProject
 ```
+### 2. Создайте файл .env по шаблону .env.example
 
-### 2. Собери и запусти контейнеры:
+### 3. Собери и запусти контейнеры:
 ``` bash
 docker-compose up --build
 ```
 Сервис будет доступен по адресу: `http://localhost:8000/v1/videos/`
 
-### 3. Генерация тестовых данных
+### 4. Генерация тестовых данных
 
 После запуска контейнера можно создать тестовые данные:
 ``` bash
