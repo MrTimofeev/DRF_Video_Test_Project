@@ -25,7 +25,7 @@
 ### 1. Клонируйте репозиторий:
 ``` bash
 git clone https://github.com/MrTimofeev/DRF_Video_Test_Project.git
-cd VideoTestProject
+cd DRF_Video_Test_Project\VideoTestProject
 ```
 
 ### 2. Собери и запусти контейнеры:
